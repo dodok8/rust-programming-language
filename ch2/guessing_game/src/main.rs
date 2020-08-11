@@ -24,9 +24,11 @@ fn main() {
 
     println!("입력한 값: {}", guess);
 
-    match guess.cmp(&secret_number) {
-        Ordering::Less => println!("입력한 숫자가 작습니다!"),
-        Ordering::Greater => println!("입력한 숫자가 큽니다!"),
-        Ordering::Equal => println!("정답!"),
-    };
+    loop {
+        match guess.cmp(&secret_number) {
+            Ordering::Less => println!("입력한 숫자가 작습니다!"),
+            Ordering::Greater => println!("입력한 숫자가 큽니다!"),
+            Ordering::Equal => println!("정답!"),
+        };
+    }
 }
