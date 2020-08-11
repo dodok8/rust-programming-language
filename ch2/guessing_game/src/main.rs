@@ -16,6 +16,12 @@ fn main() {
     io::stdin()
         .read_line(&mut guess)
         .expect("입력한 값을 읽지 못했습니다");
+
+    let guess: u32 = guess
+        .trim()
+        .parse()
+        .expect("입력한 값이 올바른 숫자가 아닙니다.");
+
     println!("입력한 값: {}", guess);
 
     match guess.cmp(&secret_number) {
