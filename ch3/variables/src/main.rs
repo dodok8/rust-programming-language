@@ -1,8 +1,7 @@
 fn main() {
-    let x = 5;
+    let a = [1, 2, 3, 4, 5];
+    let index = 10;
+    let element = a[index];
 
-    let x = x + 1;
-
-    let x = x * 2;
-    println!("x의 값 {}", x);
+    println!("요소의 값: {}", element)
 }
