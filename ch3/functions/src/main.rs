@@ -1,9 +1,8 @@
 fn main() {
-    println!("안녕하세요!");
-
-    another_function();
+    another_function(5, 6);
 }
 
-fn another_function() {
-    println!("또다른함수");
+fn another_function(x: i32, y: i32) {
+    println!("x의 값: {}", x);
+    println!("y의 값: {}", y);
 }
