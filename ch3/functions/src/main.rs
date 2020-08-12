@@ -1,11 +1,9 @@
-fn five() -> i32 {
-    5
-    // return 5;
-    // 마지막에 있는 표현식은 return을 쓰지 않아도 반환된다.
+fn main() {
+    let x = plus_one(5);
+    println!("x의 값 {}", x);
 }
 
-fn main() {
-    let x = five();
-
-    println!("x의 값: {}", x);
+fn plus_one(x: i32) -> i32 {
+    x + 1
+    // x+1; 이라 쓰면 에러 발생, 표현식과 구문을 구별하자
 }
