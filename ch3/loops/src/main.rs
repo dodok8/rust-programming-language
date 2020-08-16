@@ -1,12 +1,9 @@
 fn main() {
-    let mut counter = 0;
-    let result = loop {
-        counter += 1;
-        if counter == 10 {
-            break counter * 2;
-            // 뭔가 return을 써도 될 것 같지만 안 된다.
-        }
-    };
+    let mut number = 3;
 
-    println!("The result is {}", result);
+    while number != 0 {
+        println!("{}", number);
+
+        number = number - 1;
+    }
 }
