@@ -1,9 +1,17 @@
 fn main() {
-    let mut number = 3;
+    let a = [10, 20, 30, 40, 50];
 
-    while number != 0 {
-        println!("{}", number);
-
-        number = number - 1;
+    for element in a.iter() {
+        println!("요소의 값: {}", element);
     }
+
+    for number in (1..4).rev() {
+        println!("{}!", number);
+    }
+    println!("발사");
+
+    for number in 1..4 {
+        println!("{}!", number);
+    }
+    println!("발사");
 }
