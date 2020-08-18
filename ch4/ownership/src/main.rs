@@ -37,7 +37,7 @@ fn main() {
 
     let s4 = String::from("hello"); // 변수 s4가 생성된다.
 
-    let s5 = takes_and_gives_back(s4); //이후 리턴값이 s5로 옯겨진다.
+    let w = takes_and_gives_back(s4); //이후 리턴값이 s5로 옯겨진다.
 } // 이 곳은 변수 s의 스코프 밖이다.
 // 이곳은 s2의 범위 밖이지만, 이미 takes_and_gives_back으로 옮겨졌기 때문에 아무 일도 일어나지 않는다.
 
