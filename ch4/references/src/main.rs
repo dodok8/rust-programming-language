@@ -4,7 +4,7 @@ fn main() {
 
     let len = calculate_length(&s1);
 
-    println!("'{}'의 길이는 {}입니다.", s1, len); 
+    println!("'{}'의 길이는 {}입니다.", s1, len);
 
     let mut s = String::from("hello");
 
@@ -21,6 +21,9 @@ fn main() {
     let r2 = &s;
 
     println!("{}, {}", r1, r2);
+
+    // let reference_to_nothing = dangle();
+    let correctly_refernce = no_dangle();
 }
 
 fn calculate_length(s: &String) -> usize {
@@ -29,4 +32,16 @@ fn calculate_length(s: &String) -> usize {
 
 fn change(some_string: &mut String) {
     some_string.push_str(", world");
+}
+
+// fn dangle() -> &String {
+//     let s = String::from("hello");
+
+//     &s
+// }
+
+fn no_dangle() -> String {
+    let s = String::from("hello");
+
+    return s;
 }
