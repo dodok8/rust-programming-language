@@ -1,3 +1,4 @@
+#[derive(Debug)]
 struct Rectangle {
     width: u32,
     heigth: u32,
@@ -21,7 +22,8 @@ fn main() {
         heigth: 50,
     };
 
-    println!("사각형의 면적: {} 제곱 픽셀", area(&rect1))
+    println!("사각형의 면적: {} 제곱 픽셀", area(&rect1));
+    println!("rect1: {:#?}", rect1);
 }
 
 // fn area(width: u32, height: u32) -> u32 {
@@ -32,6 +34,7 @@ fn main() {
 //     return dimensions.0 * dimensions.1;
 // }
 
-fn area(rectangle: &Rectangle) -> u32 { //원본 객체에 대한 소유권을 아예 가져오지 않기 위해 빌려 쓴다.
+fn area(rectangle: &Rectangle) -> u32 {
+    //원본 객체에 대한 소유권을 아예 가져오지 않기 위해 빌려 쓴다.
     return rectangle.width * rectangle.heigth;
 }
