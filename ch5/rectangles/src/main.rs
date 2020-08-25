@@ -1,7 +1,18 @@
 #[derive(Debug)]
 struct Rectangle {
     width: u32,
-    heigth: u32,
+    height: u32,
+}
+
+impl Rectangle {
+    // 첫 번째 인자가 &self 메쏘드
+    fn area(&self) -> u32 {
+        self.width * self.height
+    }
+
+    fn can_hold(&self, other: &Rectangle) -> bool {
+        return self.width > other.width && self.height > other.height;
+    }
 }
 
 fn main() {
@@ -19,10 +30,16 @@ fn main() {
 
     let rect1 = Rectangle {
         width: 30,
-        heigth: 50,
+        height: 50,
     };
 
-    println!("사각형의 면적: {} 제곱 픽셀", area(&rect1));
+    let rect2 = Rectangle {
+        width: 10,
+        height: 40,
+    };
+
+    println!("사각형의 면적: {} 제곱 픽셀", rect1.area());
+    println!("rect1은 rect2를 포함하는가? {}", rect1.can_hold(&rect2));
     println!("rect1: {:#?}", rect1);
 }
 
@@ -34,7 +51,7 @@ fn main() {
 //     return dimensions.0 * dimensions.1;
 // }
 
-fn area(rectangle: &Rectangle) -> u32 {
-    //원본 객체에 대한 소유권을 아예 가져오지 않기 위해 빌려 쓴다.
-    return rectangle.width * rectangle.heigth;
-}
+// fn area(rectangle: &Rectangle) -> u32 {
+//     //원본 객체에 대한 소유권을 아예 가져오지 않기 위해 빌려 쓴다.
+//     return rectangle.width * rectangle.height;
+// }
