@@ -13,6 +13,15 @@ impl Rectangle {
     fn can_hold(&self, other: &Rectangle) -> bool {
         return self.width > other.width && self.height > other.height;
     }
+
+    // associated functions 구조체 자체의 인스턴스(&self)를 전달 받지 않음
+    fn square(size: u32) -> Rectangle {
+        //생성자 구현에 사용할 수 있다.
+        Rectangle {
+            width: size,
+            height: size,
+        }
+    }
 }
 
 fn main() {
@@ -38,8 +47,11 @@ fn main() {
         height: 40,
     };
 
+    let rect3 = Rectangle::square(20);
+
     println!("사각형의 면적: {} 제곱 픽셀", rect1.area());
     println!("rect1은 rect2를 포함하는가? {}", rect1.can_hold(&rect2));
+    println!("rect1은 rect3를 포함하는가? {}", rect1.can_hold(&rect3));
     println!("rect1: {:#?}", rect1);
 }
 
